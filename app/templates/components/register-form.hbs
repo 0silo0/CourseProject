@@ -1,0 +1,69 @@
+<form onsubmit={{action "saveUser"}}>
+  <div class="field">
+    <label class="mt-2">Email:</label>
+    {{input class="w-100" type="text" placeholder="Email" value=email}}
+
+    {{#each errors.email as |error|}}
+      <span class="error-message">{{error.message}}</span>
+    {{/each}}
+    {{#if (v-get this 'email' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this 'email' 'message'}}
+      </span>
+    {{/if}}
+  </div>
+
+  <div class="field">
+    <label class="mt-2">Username:</label>
+    {{input class="w-100" type="text" placeholder="Username" value=username}}
+
+    {{#each errors.username as |error|}}
+      <span class="error-message">{{error.message}}</span>
+    {{/each}}
+    {{#if (v-get this 'username' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this 'username' 'message'}}
+      </span>
+    {{/if}}  
+  </div>
+
+  <div class="field">
+    <label class="mt-2">Password:</label>
+    {{input class="w-100" type="password" placeholder="Password" value=password}}
+
+    {{#each errors.password as |error|}}
+      <span class="error-message">{{error.message}}</span>
+    {{/each}}
+    {{#if (v-get this 'password' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this 'password' 'message'}}
+      </span>
+    {{/if}}
+  </div>
+
+  <div class="field">
+    <label class="mt-2">Confirm Password:</label>
+    {{input class="w-100" type="password" placeholder="Confirm Password" value=passwordConfirmation}}
+
+    {{#each errors.passwordConfirmation as |error|}}
+      <span class="error-message">{{error.message}}</span>
+    {{/each}}
+    {{#if (v-get this 'passwordConfirmation' 'isInvalid')}}
+      <span class="error-message">
+        {{v-get this 'passwordConfirmation' 'message'}}
+      </span>
+    {{/if}}  
+  </div>
+
+  <div class="field mt-2">
+    {{g-recaptcha-v2
+      verified=(action "verified")
+      expired=(action "expired")
+      reset=reset
+    }}
+  </div>
+
+  <div class="form-footer mt-4 d-flex">
+    <button type="submit" class="btn-submit mx-auto" disabled={{iAmRobot}}>save</button>
+  </div>
+</form>

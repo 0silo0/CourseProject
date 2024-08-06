@@ -1,0 +1,73 @@
+<nav class="navbar static-top navbar-expand-lg navbar-light bg-light">
+    {{#link-to "index" class="navbar-brand"}}
+    {{!-- <a class="navbar-brand" href="/"> --}}
+        <img src="{{env 'rootURL'}}images/LRymChigrHA.jpg" width="28" height="28" class="d-inline-block align-top" alt="" loading="lazy">
+        {{t "menu.clubs"}}
+    {{/link-to}}
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="nav navbar-nav navigation-main">
+            <li class="nav-item active">
+                {{#link-to "index" class="nav-link"}}
+                {{!-- <a class="nav-link" href="/">Рабочий стол <span class="sr-only">(текущий)</span></a> --}}
+                Рабочий стол
+                {{/link-to}}
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="meetings.html">Встречи клуба</a>
+            </li>
+            <li class="nav-item">
+                {{#link-to "book" class="nav-link"}}
+                {{!-- <a class="nav-link" href="/">Рабочий стол <span class="sr-only">(текущий)</span></a> --}}
+                Книги
+                {{/link-to}}
+            </li>
+            <li class="nav-item">
+                {{#link-to "author" class="nav-link"}}
+                {{!-- <a class="nav-link" href="/authors">Спикеры</a> --}}
+                Спикеры
+                {{/link-to}}
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-success" href="#">Оставить заявку</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-primary" href="#">Запланировать</a>
+            </li>
+        </ul>
+    </div>
+    {{#if session.isAuthenticated}}
+    <ul class="nav navbar-nav">
+        <li class="nav-item nav-link text-info">
+            Hello, <strong>{{currentUser.user.username}}</strong>
+        </li>
+        {{!-- Hello, <strong>{{this.session.data.authenticated.tokenData.username}}</strong> --}}
+        <li class="nav-item">
+            <a href="#" class="nav-link" onclick={{action "logout"}}>Выйти</a>
+        </li>
+    </ul>
+    {{else}}
+    <ul class="nav navbar-nav">
+        <li class="nav-item">
+            {{#link-to "register" class="nav-link text-info"}}
+                Регистрация
+            {{/link-to}}
+        </li>
+        <li class="nav-item">
+            {{#link-to "login" class="nav-link"}}
+                Войти
+            {{/link-to}}
+        </li>
+    </ul>
+    {{/if}}
+    
+</nav>
+
+<div class="container mt-5 pt-5 middle">
+    {{outlet}}
+</div>
+
+<footer class="footer">
+    <div class="container">
+      <span>&copy; New Platform, 2021</span>
+    </div>
+</footer>

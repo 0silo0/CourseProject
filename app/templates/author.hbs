@@ -1,0 +1,35 @@
+<!-- app/templates/author.hbs -->
+<div class="container mt-4">
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <div class="input-group">
+        {{input type="text" placeholder="Search by Author Name" value=search class="form-control"}}
+      </div>
+    </div>
+    <div class="col-md-6 text-right">
+      {{#link-to "author.create" class="btn btn-primary"}}
+        Add New Author
+      {{/link-to}}
+    </div>
+  </div>
+
+  <div class="panel-content">
+    <h3 class="panel-title">Authors</h3>
+
+    {{#if this.isLoading}}
+    <div class="list-group">
+      <img src="images/loading.gif" />
+    </div>
+    {{else}}
+      <ul class="list-group">
+        {{#each model as |author|}}
+          <li class="list-group-item">
+            {{author-item id=author.id lastName=author.lastName firstName=author.firstName idAuthor=author.id}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/if}}
+  </div>
+</div>
+
+{{outlet}}

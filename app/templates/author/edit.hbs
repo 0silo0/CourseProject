@@ -1,0 +1,18 @@
+<div class="slide-out-bg active"></div>
+
+<div class="modal show d-block">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        {{#link-to "author" class="btn btn-secondary"}}
+          Back
+        {{/link-to}}
+        <h5 class="modal-title">Edit author № {{model.lastName}} {{model.firstName}}</h5>
+      </div>
+      
+      <div class="modal-body">
+        {{author-form author=model onsubmit=(action "saveAuthor")}}
+      </div>
+    </div>
+  </div>
+</div>

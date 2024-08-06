@@ -1,0 +1,20 @@
+<div class="modal-bg active"></div>
+
+<div class="modal show d-block">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">        
+        <h5 class="modal-title d-flex mx-auto">Register</h5>
+        {{#link-to "author" class="btn btn-secondary"}}
+          Back
+        {{/link-to}}
+      </div>
+      <div class="modal-body d-flex mx-auto">
+        {{register-form user=model errors=errors onSubmit=(action "saveUser")}}
+      </div>
+      <div class="modal-footer">
+        <!-- Здесь можно добавить дополнительные кнопки, если это необходимо -->
+      </div>
+    </div>
+  </div>
+</div>

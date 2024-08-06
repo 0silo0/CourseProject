@@ -1,0 +1,18 @@
+<form onsubmit={{action "login"}}>
+  {{#each errors as |error|}}
+    <div class="error-alert">{{error.detail}}</div>
+  {{/each}}
+  <div class="field">
+    <label>Email:</label>
+    {{input class="w-100" type="text" placeholder="Email" value=email}}
+  </div>
+
+  <div class="field">
+    <label class="mt-2">Password:</label>
+    {{input class="w-100" type="password" placeholder="Password" value=password}}
+  </div>
+
+  <div class="form-footer mt-4 d-flex">
+    <button type="submit" class="btn-submit mx-auto">login</button>
+  </div>
+</form>

@@ -1,0 +1,513 @@
+/* Sticky footer styles */
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: #3B4256;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+.modal-wrapper {
+  display: flex;
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+  z-index: 1050; /* Убедитесь, что модальное окно находится выше других элементов */
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+  text-align: center;
+  z-index: 100;
+}
+
+/* Various styles */
+.navigation-main {
+  flex: 1;
+}
+
+.navbar, .footer {
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show > .nav-link {
+  color: #263148;
+}
+
+.htop {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+.error-message {
+  color: red;
+}
+
+a.tag-link {
+  color: #007bff;
+}
+
+a.tag-link:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+.line-offset {
+  line-height: 2.5;
+}
+
+.card-button {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.navbar-panel {
+  padding: 16px 0;
+}
+
+.search {
+  width: 250px;
+}
+
+.edit-form {
+  padding-top: 40%;
+}
+
+.search-long {
+  min-width: 400px;
+}
+
+.fix-margin {
+  margin-top: -11px;
+}
+
+.btn:not([class*="btn-"]) {
+  color: #3B4256;
+}
+
+.btn-trash:hover {
+  color: #E53935;
+}
+
+.btn-edit:hover {
+  color: #62B0FF;
+}
+
+.btn-trash,
+.btn-edit {
+  padding-right: 0;
+}
+
+.btn-edit:focus,
+.btn-trash:focus,
+.btn-video:focus, 
+.btn-present:focus {
+  box-shadow: none;
+}
+
+.btn-present {
+  color: #71BC90;
+}
+
+.btn-video {
+  color: #62B0FF;
+}
+
+/* Bootstrap file styles */
+.input-group-lg .custom-file-label {
+  line-height: 1.7;
+  height: calc(1.5em + 1rem + 2px);
+}
+
+.input-group-lg .custom-file-label::after {
+  height: calc(1.5em + 1rem);
+}
+
+.custom-file-clear {
+  cursor: pointer;
+}
+
+.placeholder-color {
+  color: #6c757d;
+}
+
+/* Bootstrap date-picker styles */
+.datepicker {
+  border-radius: 0.25rem;
+}
+
+.datepicker td,
+.datepicker th {
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.85rem;
+}
+
+.btn-new.hidden, .btn-recessed.hidden {
+  display: none;
+}
+
+/* Bootstrap dropdown styles */
+.dropdown:not(.bootstrap-select) .dropdown-toggle {
+  text-align: justify;
+  white-space: normal;
+  height: calc(1.5em + 0.75rem + 2px);
+  border: 1px solid #ced4da;
+}
+
+.dropdown:not(.bootstrap-select) .dropdown-toggle span {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown:not(.bootstrap-select) .dropdown-toggle span.caret {
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  vertical-align: 0.255em;
+}
+
+.dropdown:not(.bootstrap-select) .dropdown-toggle::before {
+  content: '';
+  width: 100%;
+  height: 0;
+}
+
+.dropdown:not(.bootstrap-select) .dropdown-toggle::after {
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  content: '';
+  display: inline-block;
+}
+
+.dropdown.bootstrap-select .dropdown-toggle {
+  white-space: normal;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  color: #495057;
+}
+
+.dropdown.bootstrap-select .dropdown-toggle:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown.bootstrap-select.dropdown-filter-control {
+  margin-top: 0.5rem!important;
+  margin-bottom: 0.5rem!important;
+}
+
+.dropdown.bootstrap-select .dropdown-toggle.bs-placeholder {
+  color: #6c757d;
+}
+
+/* Signin form styles */
+.form-signin-wrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #F4F7FB;
+  height: 100%;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.home-page {
+  background-color: #F4F7FB;
+}
+
+/* card */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(95, 95, 95, 0.153646);
+}
+
+.card-header,
+.card-footer {
+  background-color: #F4F7FB;
+}
+
+.card-header .card-title,
+.card-body .card-title {
+  margin: 0;
+}
+
+a.card h3,
+a.card:hover h3 {
+  color: #3B4256;
+  outline: none;
+  margin-top: 2rem;
+}
+
+a.card:hover {
+  text-decoration: none;
+}
+
+a.card .card-body {
+  padding: 2rem;
+}
+
+.border.border-dark {
+  border: 1px solid rgba(0, 0, 0, 0.1)!important;
+  box-shadow: 0px 4px 12px rgba(95, 95, 95, 0.153646);
+}
+
+/* form-control */
+.col-12.text-right > .btn {
+  margin: .25rem .125rem;
+}
+
+/* For author detail */
+.slide-out-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: none; /* Изначально скрыто */
+}
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+.slide-out-card {
+  padding: 20px;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.slide-out-heading .title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.btn-pop {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-recessed {
+  padding: 10px 15px;
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.slide-out-content {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Активные стили для видимости слайдера */
+.slide-out.active {
+  transform: translateX(0);
+}
+
+.slide-out-bg.active {
+  display: block;
+}
+
+/* Media queries */
+@media (max-width: 576px) {
+  .desktop-icon {
+    width: 4em;
+    height: 4em;
+  }
+
+  .form-inline .form-control:not(.search-only) {
+    width: 100px;
+  }
+
+  .form-inline .form-control.search-only {
+    width: inherit;
+  }
+
+  .search-long {
+    min-width: inherit;
+  }
+
+  .col-md-auto {
+    width: auto;
+  }
+
+  .col-filter {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .desktop-icon {
+    width: 6em;
+    height: 6em;
+  }
+
+  .form-inline .form-control:not(.search-only) {
+    width: 130px;
+  }
+
+  .search-long {
+    min-width: inherit;
+  }
+
+  .col-md-auto {
+    width: auto;
+  }
+
+  .col-filter {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktop-icon {
+    width: 7em;
+    height: 7em;
+  }
+
+  .form-inline .form-control:not(.search-only) {
+    width: inherit;
+  }
+
+  .search-long {
+    min-width: 250px;
+  }
+
+  .datepicker-meeting {
+    min-width: 400px;
+  }
+
+  .col-filter {
+    width: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .desktop-icon {
+    width: 9em;
+    height: 9em;
+  }
+
+  .search-long {
+    min-width: 400px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .desktop-icon {
+    width: 10em;
+    height: 10em;
+  }
+}
+
+.loading-container {
+  position: relative; /* Для контекста позиционирования изображения загрузки */
+}
+
+.loading-container img {
+  position: absolute; /* Абсолютное позиционирование изображения загрузки */
+  top: 50%;            /* Центрирование по вертикали */
+  left: 50%;           /* Центрирование по горизонтали */
+  transform: translate(-50%, -50%); /* Центрирование изображения */
+  max-width: 100px;   /* Установите максимальную ширину изображения */
+  max-height: 100px;  /* Установите максимальную высоту изображения */
+}

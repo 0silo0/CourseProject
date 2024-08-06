@@ -1,0 +1,20 @@
+<div class="modal-bg active"></div>
+
+<div class="modal show d-block">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mx-auto">Login</h5>
+        {{#link-to "author" class="btn btn-secondary"}}
+          Back
+        {{/link-to}}
+      </div>
+      <div class="modal-body d-flex mx-auto">
+        {{login-form user=model errors=errors onSubmit=(action "login")}}
+      </div>
+      <div class="modal-footer">
+        <!-- Здесь можно добавить дополнительные кнопки или элементы, если это необходимо -->
+      </div>
+    </div>
+  </div>
+</div>
